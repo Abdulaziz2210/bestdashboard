@@ -5,6 +5,7 @@ import { MdLogout } from "react-icons/md";
 import { BsTranslate } from "react-icons/bs";
 import { useDispatch, useSelector } from 'react-redux';
 import { navbarToggle, profileToggle } from '../../redux/slice/nslice';
+import { BsSpeedometer } from "react-icons/bs";
 
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
   return (
     <div className='flex justify-between bg-[#333333] px-4 py-2'>
       <div className=' flex justify-between items-center w-[400px]'>
-        {toggle &&  <p className='text-[30px] text-[semibold] text-sky-400'> TopSpeed DashBoard</p>  }
+        {toggle &&  <p className='text-[20px] text-[semibold] text-sky-400 flex items-center gap-x-2 cursor-pointer' > <BsSpeedometer className='text-[gold]'/> TopSpeed DashBoard</p>  }
 
       
       <div onClick={()=>dispatch(navbarToggle(!toggle))} className='flex justify-center items-center w-[40px] h-[40px] text-[gold] text-[30px] cursor-pointer hover:bg-[#242424] rounded transition-all'>
@@ -31,7 +32,7 @@ const Navbar = () => {
       
       </div>
 
-        <div onClick={()=>dispatch(profileToggle(!profile))} className='cursor-pointer flex justify-center items-center font-semibold text-[white] rounded-full w-[45px] h-[45px] bg-sky-500 gap-[5px] '>
+        <div onClick={()=>dispatch(profileToggle(!profile))} className='cursor-pointer flex justify-center items-center font-semibold text-[white] rounded-full w-[45px] h-[45px] bg-sky-500 gap-x-5 '>
         A.A
         </div>
 
@@ -39,8 +40,8 @@ const Navbar = () => {
           profile ?
           <div className='absolute top-[70px] right-[10px] bg-[#333333] p-2 transition-all rounded-md'>
             <ul>
-              <li className='font-[400] text-[20px] p-1 px-4 border-b-[1px] border-solid border-black'>
-                  ...
+              <li className='font-[400] text-sky-400 text-[20px] p-1 px-4 border-b-[1px] border-solid border-black  hover:bg-[#242424] transition-all'>
+                  TopSpeed
               </li>
               <hr />
               <li className='flex items-center gap-x-2 p-2 px-4 text-[15px] cursor-pointer text-[red] hover:bg-[#242424] transition-all'>
